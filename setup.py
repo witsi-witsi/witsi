@@ -8,7 +8,6 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name='witsi',
     version='0.1',
-    scripts=['witsi'],
     author="Pewen",
     description="Some common function usen in the spiders",
     long_description=long_description,
