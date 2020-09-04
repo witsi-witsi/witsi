@@ -13,9 +13,8 @@ class CsvPipeline(object):
         settings = crawler.spider.custom_settings
 
         spider_name = crawler.spider.name
-        proyect = settings.get('BOT_NAME', spider_name)
-        output_dir = settings.get('OUTPUT_DIR', './')
-        file_path = Path() / output_dir / proyect / f'{spider_name}.csv'
+        output_dir = settings.get('OUTPUT_DIR', spider_name)
+        file_path = Path() / output_dir / f'{spider_name}.csv'
 
         try:
             header = settings['CSV']['HEADER']
@@ -82,10 +81,9 @@ class DataPackagePipeline(object):
         item_class = crawler.spider.item_class
 
         spider_name = crawler.spider.name
-        proyect = settings.get('BOT_NAME', spider_name)
-        output_dir = settings.get('OUTPUT_DIR', './')
-        file_path = Path() / output_dir / proyect / f'{spider_name}.csv'
-        datapackage_path = Path() / output_dir / proyect / 'datapackage.json'
+        output_dir = settings.get('OUTPUT_DIR', spider_name)
+        file_path = Path() / output_dir / f'{spider_name}.csv'
+        datapackage_path = Path() / output_dir / 'datapackage.json'
 
         try:
             header = settings['CSV']['HEADER']
